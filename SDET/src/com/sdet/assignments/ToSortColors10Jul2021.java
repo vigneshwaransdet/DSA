@@ -135,7 +135,7 @@ public class ToSortColors10Jul2021 {
 		boolean flag=false;
 		if(arr.length==0) return new int[] {-1};
 		for(int i=0;i<arr.length;i++) {
-			if(arr[low]==0){
+			if(arr[mid]==0){
 				int temp = arr[low];
 				arr[low]=arr[mid];
 				arr[mid]=temp;
@@ -143,7 +143,7 @@ public class ToSortColors10Jul2021 {
 				mid++;
 				flag=true;
 			}
-			else if(arr[low]==2) {
+			else if(arr[mid]==2) {
 				int temp = arr[low];
 				arr[low] = arr[high];
 				arr[high] = temp;
