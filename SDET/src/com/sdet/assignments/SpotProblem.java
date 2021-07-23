@@ -76,8 +76,6 @@ public class SpotProblem {
 			else if(arr[right]%2!=0) {
 				right--;
 			}
-			
-			
 		}
 		
 		return arr;
