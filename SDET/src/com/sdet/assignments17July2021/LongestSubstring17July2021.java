@@ -1,8 +1,9 @@
 package com.sdet.assignments17July2021;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import junit.framework.Assert;
+
 
 /*
  * 
@@ -50,10 +51,18 @@ public class LongestSubstring17July2021 {
 	@Test
 	public void test1() {
 		String s = "abcdde";
-		Assert.assertEquals(findUniqueCharacters(s), 4);		
+		int k = 4;
+		Assert.assertEquals(findUniqueCharacters(s,k), 4);		
+	}
+	
+	@Test
+	public void test2() {
+		String s = "eeebabe";
+		int k = 3;
+		Assert.assertEquals(findUniqueCharacters(s,k), 3);		
 	}
 
-	private int findUniqueCharacters(String s) {
+	private int findUniqueCharacters(String s,int k) {
 		
 		int left=0,right=0,uniqueCount=0,max=0;
 		int[] charCount = new int[128];
@@ -61,19 +70,13 @@ public class LongestSubstring17July2021 {
 			if(charCount[s.charAt(right)]++ == 0) {
 				uniqueCount++;
 			}
-//			else {
-				max = right-left;
+			if(uniqueCount>k)
 			while(--charCount[s.charAt(left++)]>0) {
-				
+				uniqueCount--;
 			}
-			uniqueCount--;
-//			}
-			
-			
+			max = Math.max(max, right-left);
 		}
-		
-		
-		return uniqueCount;
+		return max;
 	}
 	
 	

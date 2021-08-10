@@ -39,7 +39,7 @@ public class RearrangePositiveNegativeNumbers21July2021 {
 	@Test
 	public void test1() {
 		int[] data = {12, -90, -100, 15, 98, 99, -56, -2};
-		Assert.assertTrue(Arrays.equals(testMethod(data), new int[] {12, -100, 15, -90, 98, -56, 99, -2}));
+		Assert.assertTrue(Arrays.equals(testMethod(data), new int[] {98, -100, 99, -2, 12, -56, 15, -90}));
 	}
 	
 //	@Test
@@ -48,31 +48,26 @@ public class RearrangePositiveNegativeNumbers21July2021 {
 	}
 
 	private int[] testMethod(int[] data) {
-		int slow = 0,fast=1;
-		for (int i = 0; i < data.length;i++) {
-			if(data[slow]>0) slow++;
-			if(fast<data.length && data[fast]>0) {
-				if(data[slow]<0 && data[fast]>0) {
-				int temp=data[fast];
-				data[fast] = data[slow];
-				data[slow] = temp;
-				}
+		int lessIndex = -1;
+		for(int i=0;i<data.length;i++) {
+			
+			if(data[i]<0) {
+				lessIndex++;
+				int temp=data[lessIndex];
+				data[lessIndex]=data[i];
+				data[i]=temp;
 			}
-			fast++; 
 		}
-		System.out.println(fast);
-		System.out.println(slow);
-		System.out.println(Arrays.toString(data));
-		int[] arr = new int[data.length];
-		int left = 0,right=slow;
-		for (int i = 0; i < data.length; i+=2) {
-			arr[i] = data[left];
-			arr[i+1] = data[right];
-			left++;
-			right++;
+		int negativeBound=lessIndex+1,negativeIndex=negativeBound;
+		
+		for(int positiveIndex=0; positiveIndex < negativeBound && positiveIndex < data.length; positiveIndex+=2,negativeIndex+=1) {
+			int temp = data[positiveIndex];
+			data[positiveIndex] = data[negativeIndex];
+			data[negativeIndex] = temp;
+			
+			negativeBound++;
 		}
-		System.out.println(Arrays.toString(arr));
-		return arr;
+		return data;
 	}
 
 }

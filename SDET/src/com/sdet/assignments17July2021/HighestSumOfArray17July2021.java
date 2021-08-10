@@ -1,8 +1,7 @@
 package com.sdet.assignments17July2021;
 
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class HighestSumOfArray17July2021 {
 	
