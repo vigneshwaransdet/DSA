@@ -40,7 +40,7 @@ The substring with start index = 6 is "bac", which is an anagram of "abc".
  * 
  */
 
-public class Anagram13July2021_Incomplete {
+public class Anagram13July2021_completed {
 	@Test
 	public void test1() {
 		String s1 = "cbaebabacd"; // ccaeb
