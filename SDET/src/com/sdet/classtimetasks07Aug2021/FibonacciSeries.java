@@ -13,13 +13,15 @@ public class FibonacciSeries {
 	@Test
 	public void test1() {
 		int n = 5;
-		Assert.assertEquals(toFindFibonacciSeries(n), 3);
+//		Assert.assertEquals(toFindFibonacciSeries(n), 3);
+		Assert.assertEquals(toFindFibonacciSeriesUsingRecursion(n), 3);
 	}
 	
 	@Test
 	public void test2() {
 		int n = 9;
-		Assert.assertEquals(toFindFibonacciSeries(n), 21);
+//		Assert.assertEquals(toFindFibonacciSeries(n), 21);
+		Assert.assertEquals(toFindFibonacciSeriesUsingRecursion(n), 21);
 	}
 
 	//Using Brute Force
