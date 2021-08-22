@@ -3,6 +3,7 @@ package com.sdet.assignments22July2021;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class ReturnTargetSubString {
@@ -10,7 +11,7 @@ public class ReturnTargetSubString {
 	public void test1() {
 		String s = "ADOBECODEBANC";
 		String t = "ABC";
-		toFind(s,t);
+		Assert.assertEquals(toFind(s,t), "BANC");
 	}
 
 	private String toFind(String s, String p) {
