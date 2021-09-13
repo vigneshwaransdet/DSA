@@ -61,9 +61,7 @@ public class ValidParanthesis {
 				st.push(s.charAt(i));
 			}
 		}
-		
 		if(st.isEmpty()) return true;
-		 
 		return false;
 	}
 	
