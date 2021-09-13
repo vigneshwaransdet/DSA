@@ -44,11 +44,17 @@ public class FindSign {
 		Assert.assertEquals(-1, toFindSign(nums));
 		
 	}	
+	@Test
+	public void test5() {
+		int[] nums = {1,5,0,2,-3};
+		Assert.assertEquals(toFindSign(nums), 0);
+		
+	}
 			
 	private int toFindSign(int[] nums) {
 		int res = 1;
 		for (int i = 0; i < nums.length; i++) {
-			if(res == 0) return 0;
+			if(nums[i]==0) return 0;
 			res*=nums[i] < 0 ? -1 : 1;
 		}
 		return res;
