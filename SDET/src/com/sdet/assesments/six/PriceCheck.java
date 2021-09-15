@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -31,6 +30,7 @@ public class PriceCheck {
 		
 		for (int i = 0; i < soldProducts.size(); i++) {
 			if(soldProductPrices.get(i) - map.get(soldProducts.get(i)) != 0) {
+				
 				count++;
 			}
 		}
